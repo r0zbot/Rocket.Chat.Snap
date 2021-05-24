@@ -1,6 +1,6 @@
 #!/bin/bash
 
-curl -SLf "https://releases.rocket.chat/3.15.0-develop/download/" -o rocket.chat.tgz
+curl -SLf "https://releases.rocket.chat/$SNAPCRAFT_PROJECT_VERSION/download/" -o rocket.chat.tgz
 
 tar xf rocket.chat.tgz --strip 1
 
@@ -32,3 +32,11 @@ rm -rf node_modules/node-pre-gyp/node_modules/tar/lib/.mkdir.js.swp
 rm -rf npm/node_modules/sharp/node_modules/semver/bin/.semver.js.swp
 rm -rf npm/node_modules/tar/lib/.mkdir.js.swp
 
+# move from build to install area
+cd ../..
+mv programs "$SNAPCRAFT_PART_INSTALL"
+mv main.js "$SNAPCRAFT_PART_INSTALL"
+mv .node_version.txt "$SNAPCRAFT_PART_INSTALL"
+mv etc "$SNAPCRAFT_PART_INSTALL"
+mv usr "$SNAPCRAFT_PART_INSTALL"
+mv star.json "$SNAPCRAFT_PART_INSTALL"

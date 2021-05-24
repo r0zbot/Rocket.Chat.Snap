@@ -1,6 +1,6 @@
 #!/bin/bash
 
-node_version="v12.22.1"
+# node_version="v12.22.1"
 
 unamem="$(uname -m)"
 if [[ $unamem == *aarch64* ]]; then
@@ -20,4 +20,4 @@ fi
 
 
 wget https://nodejs.org/dist/$node_version/node-$node_version-linux-$node_arch.tar.xz
-tar xf node-$node_version-linux-$node_arch.tar.xz --strip 1
+tar xf node-$node_version-linux-$node_arch.tar.xz --strip 1 --directory "$SNAPCRAFT_PART_INSTALL"
