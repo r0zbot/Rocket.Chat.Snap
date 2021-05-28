@@ -1,4 +1,4 @@
-This repo is a Github Action used for building our cloud base images using Packer.
+This repo is a Github Action used for building and testing our cloud base images using Packer.
 
 ## Development
 
